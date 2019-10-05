@@ -1,0 +1,59 @@
+@import "./components/MainForm.scss";
+@import "./components/Login.scss";
+@import "./components/iM.scss";
+@import "./components/OS.scss";
+@import "./components/Home.scss";
+
+@font-face {
+  font-family: Rajdhani;
+  src: local("Rajdhani"),
+  url("fonts/Rajdhani-SemiBold.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  background: #0a0a0c;
+  font-family: Rajdhani, "Noto Sans CJK SC", "Noto Sans SC", "Microsoft Yahei", -apple-system, sans-serif;
+}
+
+button {
+  color: white;
+  background: none;
+  border: none;
+  padding: inherit;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  color: #00b0ff;
+  text-decoration: none;
+}
+
+.App {
+  width: 80vw;
+  height: 80vh;
+  left: 10vw;
+  top: 10vh;
+  position: absolute;
+  color: white;
+
+  @media screen and (max-width: 767px) {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+  }
+}
+
+.Full {
+  display: block;
+  width: 100%;
+}
+
+.Hidden {
+  display: none;
+}

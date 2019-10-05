@@ -1,0 +1,79 @@
+.iM {
+  height: 100%;
+
+  &-List {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    overflow-y: scroll;
+
+    .iM-Row {
+      cursor: pointer;
+    }
+  }
+
+  &-View {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  &-Row {
+    display: flex;
+    margin: 1em;
+    padding: 1em;
+    border: solid 1px;
+  }
+
+  &-Avatar {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-break: break-all;
+    text-align: center;
+
+    img {
+      width: 64px;
+    }
+  }
+
+  &-Info {
+    display: flex;
+    justify-content: flex-end;
+    &-Likes,
+    &-Replies {
+      padding: 10px;
+    }
+  }
+
+  &-Header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-Title {
+    margin: 0em 1.2em 3em 1.2em;
+    word-break: break-word;
+  }
+
+  &-Content {
+    white-space: pre-line;
+    padding: 0em 1em 1em 1em;
+
+    &-Title {
+      margin-bottom: 1em;
+      font-size: 1.2em;
+      color: #00b0ff;
+    }
+
+    &-Image {
+      margin-top: 20px;
+      img {
+        height: 8em;
+        cursor: pointer;
+      }
+    }
+  }
+}

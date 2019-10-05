@@ -1,0 +1,126 @@
+.OS {
+  height: 100%;
+  display: flex;
+
+  &-Sidebar {
+    height: 100%;
+    width: 20vw;
+    background: #2d303a;
+    border-radius: 0px 0px 0px 5px;
+    overflow-y: scroll;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    &-Folder {
+      margin: 8px;
+      user-select: none;
+
+      &-Title {
+        cursor: pointer;
+        margin-bottom: 0.2em;
+        font-size: 1.2em;
+      }
+      &-Item {
+        margin-left: 0.8em;
+        margin-top: 0.2em;
+        font-size: 1.1em;
+        cursor: pointer;
+        word-break: break-all;
+        img {
+          height: 1.2em;
+          width: 1.2em;
+        }
+      }
+      &-Active {
+        color: #ffc107;
+      }
+    }
+  }
+  &-Content {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    padding: 12px;
+    overflow-y: scroll;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    &-Audio {
+      margin-bottom: 1.2em;
+      .aplayer {
+        background: black;
+      }
+    }
+    &-Video {
+      margin-bottom: 1.2em;
+    }
+    &-Image {
+      img {
+        width: 100%;
+      }
+      margin-bottom: 1.2em;
+    }
+    &-Text {
+      white-space: pre-line;
+      margin-bottom: 1.2em;
+    }
+    &-MailInfo {
+      color: gray;
+    }
+    &-Dialog {
+      margin-bottom: 1.2em;
+      border: solid 1px;
+      padding: 1em;
+      &-Name {
+        font-size: 0.8em;
+      }
+      &-Content {
+        white-space: pre-line;
+        font-size: 1.2em;
+        margin-top: 0.4em;
+      }
+    }
+    &-Msg {
+      &-Row {
+        display: flex;
+      }
+      &-System {
+        display: block;
+        text-align: center;
+        color: gray;
+        font-size: 0.9em;
+      }
+      &-Self {
+        display: flex;
+        flex-direction: row-reverse;
+        .OS-Content-Msg-Info {
+          justify-content: flex-end;
+        }
+      }
+      &-Avatar {
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+      }
+      &-Time {
+        color: gray;
+      }
+      &-Name {
+        margin-right: 1em;
+        color: #ff9800;
+      }
+
+      &-Info {
+        display: flex;
+        font-size: 0.9em;
+      }
+      &-Text {
+        font-size: 1.2em;
+        white-space: pre-line;
+      }
+    }
+  }
+}

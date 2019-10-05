@@ -1,0 +1,46 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2em;
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 1.2em;
+
+  &-Body {
+    padding-top: 1.5em;
+  }
+
+  &-Info {
+    color: gray;
+    font-style: italic;
+  }
+
+  &-Buttons {
+    margin-bottom: 2em;
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+  }
+
+  &-Button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    padding: .6em 1.4em;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-right: 1em;
+    background: #2d303a;
+
+    img {
+      margin-bottom: 0.4em;
+      width: 64px;
+    }
+
+    &:hover {
+      background: #2d303a44;
+      transition: 0.2s ease;
+    }
+  }
+}

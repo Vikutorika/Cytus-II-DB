@@ -1,0 +1,13 @@
+btn_gallery
+btn_im
+btn_os
+
+{character}_s
+
+AudioClip:
+story_im02
+story_004
+title*
+{character}_*
+Password_Fail
+Password_Pass

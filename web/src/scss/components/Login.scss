@@ -1,0 +1,32 @@
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15vh;
+
+  &-Label {
+    margin-top: 1.2vh;
+    font-size: 1.2em;
+  }
+  &-Input {
+    margin-top: 1.2vh;
+    border: none;
+
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: inherit;
+
+    background: #2d303a;
+  }
+  &-Button {
+    display: block;
+    margin-top: 2.5vh;
+    padding: 0.4em 0.8em;
+
+    font-size: 1.2em;
+    font-family: inherit;
+
+    background: #2d303a;
+  }
+}
