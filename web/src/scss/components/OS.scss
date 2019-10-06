@@ -8,9 +8,14 @@
     background: #2d303a;
     border-radius: 0px 0px 0px 5px;
     overflow-y: scroll;
+    resize: horizontal;
+    max-width: 50%;
 
     @media screen and (max-width: 767px) {
+      resize: none;
       width: 100%;
+      max-width: 100%;
+      font-size: 1.2em;
     }
 
     &-Folder {
@@ -73,7 +78,8 @@
     }
     &-Dialog {
       margin-bottom: 1.2em;
-      border: solid 1px;
+      background: #ffffff08;
+      border-radius: 5px;
       padding: 1em;
       &-Name {
         font-size: 0.8em;

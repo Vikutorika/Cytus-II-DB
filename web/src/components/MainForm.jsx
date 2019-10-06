@@ -30,6 +30,10 @@ export default class MainForm extends Component {
 
   open(page) {
     if (page === this.state.route) return;
+
+    if (window._czc)
+      window._czc.push(["_trackPageview", "/" + page, "/" + this.state.route]);
+
     if (checkUUID())
       switch (page) {
         case "OS":
@@ -38,16 +42,18 @@ export default class MainForm extends Component {
             cmode: true,
             csidebar: true,
             cback: false,
-            imlist: true
+            imlist: true,
+            sidebar: true
           });
           break;
         case "DB":
           this.setState({
             route: "DB",
-            cmode: true,
+            cmode: false,
             csidebar: true,
             cback: false,
-            imlist: true
+            imlist: true,
+            sidebar: true
           });
           break;
         case "iM":
@@ -56,7 +62,8 @@ export default class MainForm extends Component {
             cmode: false,
             csidebar: false,
             cback: true,
-            imlist: true
+            imlist: true,
+            sidebar: true
           });
           break;
         default:
@@ -65,7 +72,8 @@ export default class MainForm extends Component {
             cmode: false,
             csidebar: false,
             cback: false,
-            imlist: true
+            imlist: true,
+            sidebar: true
           });
           break;
       }
@@ -125,7 +133,6 @@ export default class MainForm extends Component {
             )}
             {this.state.route === "DB" && (
               <DB
-                timeline={this.state.timeline}
                 sidebar={this.state.sidebar}
                 toggleSidebar={this.toggleSidebar.bind(this)}
                 lang={this.state.lang}

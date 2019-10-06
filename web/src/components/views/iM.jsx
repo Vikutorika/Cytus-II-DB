@@ -15,15 +15,11 @@ export default class IM extends Component {
     });
   }
 
-  componentDidUpdate() {
-    this.refs.iM.scrollTo(this.refs.iM.scrollTop, this.refs.iM.scrollLeft);
-  }
-
   open(item) {
-    this.props.onPost();
     fetch("./data/imposts/" + item.id.toLowerCase() + ".json").then(res => {
       res.json().then(data => {
         data.title = item.title;
+        this.props.onPost();
         this.setState({ post: data });
       });
     });
@@ -60,9 +56,7 @@ export default class IM extends Component {
               </div>
             ))}
         </div>
-        <div
-          className={"iM-View " + (this.props.imlist ? "Hidden" : "")}
-          ref="iM">
+        <div className={"iM-View " + (this.props.imlist ? "Hidden" : "")}>
           {this.state.post && (
             <>
               <div className="iM-Row" key={this.state.post.id}>

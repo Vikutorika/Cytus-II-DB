@@ -21,11 +21,7 @@ export default class OS extends Component {
   refresh = () => {};
 
   componentDidMount() {
-    //Fetch folder data
     this.fetchFolders();
-
-    //Sidebar
-    if (window.outerWidth < 767) this.props.toggleSidebar();
   }
 
   componentDidUpdate(prevProps) {
@@ -71,6 +67,9 @@ export default class OS extends Component {
     this.players.forEach(ap => ap.destroy());
     this.players = [];
     this.refs.Content.scrollTo(0, 0);
+
+    //Mobile Sidebar
+    if (window.outerWidth < 767) this.props.toggleSidebar();
 
     //Special Folder
     if (folder === "timeline") folder = item.folder;
@@ -162,7 +161,7 @@ export default class OS extends Component {
                         audio={{
                           name: i18n(["BGM", "背景音乐"]),
                           artist: data.attrs[0],
-                          url:`./audios/bgms/${data.attrs[0].toLowerCase()}.mp3`
+                          url: `./audios/bgms/${data.attrs[0].toLowerCase()}.mp3`
                         }}
                         mutex={false}
                         onInit={ap => (this.players = this.players.concat(ap))}
@@ -180,8 +179,7 @@ export default class OS extends Component {
                         audio={{
                           name: data.attrs[1],
                           artist: this.state.data.name,
-                          url:
-                            `./audios/sounds/${data.attrs[0].toLowerCase()}.mp3`
+                          url: `./audios/sounds/${data.attrs[0].toLowerCase()}.mp3`
                         }}
                         mutex={false}
                         onInit={ap => (this.players = this.players.concat(ap))}
@@ -194,9 +192,7 @@ export default class OS extends Component {
                       className="OS-Content-Image"
                       key={this.state.data.id + index}>
                       <img
-                        src={
-                          `./images/osfiles/${data.attrs[0].toLowerCase()}.jpg`
-                        }
+                        src={`./images/osfiles/${data.attrs[0].toLowerCase()}.jpg`}
                         alt={data.attrs[0]}
                         onClick={() =>
                           window.open(
