@@ -8,7 +8,7 @@ Donate [here](https://afdian.net/@dtsdao).
 
 - Linux/Windows PC
 - Bash
-- FFMpeg
+- FFmpeg
 - Python 3 with `pydub` and `Pillow`
 - [AssetStudio](https://github.com/Perfare/AssetStudio)
 
@@ -19,10 +19,9 @@ Donate [here](https://afdian.net/@dtsdao).
 3. Put your `.apk` file into `./apk` and rename to `cytus.apk`
 4. Execute `./run.sh`
 5. Use AssetStudio to export files as below. (Maybe need a long time)
-6. Execute `python convert.py` and `python parse.py`
-7. Execute `./migrate.sh`
-8. Go into `./web` and run `npm i && npm run build`
-9. Release your build version.
+6. Execute `./migrate.sh`
+7. Go into `./web` and run `npm i && npm run build`
+8. Release your build version.
 
 ## Export Instruction
 
@@ -38,6 +37,13 @@ Donate [here](https://afdian.net/@dtsdao).
 9. Export `Sprite` : `{character}_s` to `./res/export/images/characters`
 10. Export `AudioClip` : `story_*` to `./res/export/audios/glitch`
 11. (Optional) Export `AudioClip` : `title*`, `{character}_*`(Bigger ones for full version) to `./res/export/audios/extra`
+
+## Deploy
+
+1. After `npm run build`, go back to this folder
+2. Clone your remote git repo to `./deploy`
+3. Execute `./deploy.sh`
+4. Refresh your pages
 
 ## Announcement
 
