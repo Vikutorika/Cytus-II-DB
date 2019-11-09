@@ -1,3 +1,8 @@
 apk/*
 obb/*
-/deploy
+res/*
+deploy/*
+!apk/.gitkeep
+!obb/.gitkeep
+!res/.gitkeep
+!deploy/.gitkeep
