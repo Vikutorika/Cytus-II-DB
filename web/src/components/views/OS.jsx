@@ -18,14 +18,14 @@ export default class OS extends Component {
 
   players = [];
 
-  refresh = () => {};
-
   componentDidMount() {
     this.fetchFolders();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.props.timeline !== prevProps.timeline) this.fetchFolders();
+    if (this.state.data && prevState.data && this.state.data.id !== prevState.data.id)
+      this.refs.Content.scrollTo(0,0);
   }
 
   componentWillUnmount() {
@@ -66,7 +66,6 @@ export default class OS extends Component {
     //Init
     this.players.forEach(ap => ap.destroy());
     this.players = [];
-    this.refs.Content.scrollTo(0, 0);
 
     //Mobile Sidebar
     if (window.outerWidth < 767) this.props.toggleSidebar();

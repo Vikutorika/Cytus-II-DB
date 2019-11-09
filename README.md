@@ -23,27 +23,36 @@ Donate [here](https://afdian.net/@dtsdao).
 7. Go into `./web` and run `npm i && npm run build`
 8. Release your build version.
 
+## 编译 - 龙渊版
+
+1. 用 `git` 克隆本项目
+2. 将游戏的 `apk` 文件拷贝到 `./apk` 中并重命名为 `cytus.apk`
+3. 运行 `./longyuan.sh`
+4. 按照下方说明使用 AssetStudio 将所需文件导出（可能会花点时间）
+5. 运行 `./migrate.sh`
+6. 进入 `./web` 执行 `npm i && npm run build`
+7. 发布你编译的版本
+
 ## Export Instruction
 
-1. Enable `Options > Display all assets`
-2. Enable `Options > Display asset original name`
-3. Enable `Options > Do not group`
-4. Enable `Options > Export options > Convert Texture2D(PNG)`
-3. Filter `AudioClip`, `TextAsset`, `Sprite`
-5. Use `Export > Filtered assets`
-6. Load folder `./res/bundles` and export to `./res/export`
-7. Restart AssetStudio
-8. Load folder `./res/unity`
-9. Export `Sprite` : `{character}_s` to `./res/export/images/characters`
-10. Export `AudioClip` : `story_*` to `./res/export/audios/glitch`
-11. (Optional) Export `AudioClip` : `title*`, `{character}_*`(Bigger ones for full version) to `./res/export/audios/extra`
+1. Load folder `./res/bundles`
+2. Enable `Options > Display all assets`
+3. Enable `Options > Display asset original name`
+4. Enable `Options > Do not group`
+5. Enable `Options > Export options > Convert Texture2D(PNG)`
+6. Filter `AudioClip`, `TextAsset`, `Sprite`
+7. `Export > Filtered assets` to `./res/export`
+8. Restart AssetStudio
+9.  Load folder `./res/unity`
+10. Export `Sprite` : `{character}_s` to `./res/export/images/characters`
+11. Export `AudioClip` : `story_*` to `./res/export/audios/story`
+12. (Optional) Export `AudioClip` : `title*`, `{character}_*` (Larger ones are full-versions) to `./res/export/audios/extra`
 
 ## Deploy
 
-1. After `npm run build`, go back to this folder
-2. Clone your remote git repo to `./deploy`
-3. Execute `./deploy.sh`
-4. Refresh your pages
+1. Clone your remote git repo to `./deploy`
+2. Execute `./deploy.sh`
+3. Refresh your pages
 
 ## Announcement
 

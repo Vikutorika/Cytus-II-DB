@@ -26,6 +26,7 @@ def do_attachments(kind):
             print('%s at %d x %d' % (i, im.width, im.height))
 
         im.convert('RGB').save('%s/%s.jpg' % (ofolder, i))
+    print("Finished Attachments.")
 
 
 def do_avatars():
@@ -38,6 +39,7 @@ def do_avatars():
     for folder in folders:
         for i in os.listdir(folder[0]):
             Image.open('%s/%s' % (folder[0], i)).save('%s/%s' % (folder[1], i))
+    print("Finished Avatars.")
 
 
 def do_imageviewer():
@@ -53,6 +55,7 @@ def do_imageviewer():
             print('%s at %d x %d' % (i, im.width, im.height))
         im.convert('RGB').save(
             './res/converted/images/osspecial/%s.jpg' % i.split('.')[0])
+    print("Finished Imageviewer.")
 
 
 '''
@@ -70,9 +73,13 @@ def do_music():
         ('./res/export/audios/extra', './res/converted/audios/extra')
     ]
     for folder in folders:
-        for i in os.listdir(folder[0]):
+        print("Convert Music [%s]" % folder[0])
+        flist = os.listdir(folder[0])
+        for i in flist:
             AudioSegment.from_wav('%s/%s' % (folder[0], i)).export(
                 '%s/%s.mp3' % (folder[1], i.split('.')[0]), bitrate='128k')
+            print("Convert Music Progress: [%d/%d]" % (flist.index(i)+1,len(flist)))
+    print("Finished Musics.")
 
 
 '''
@@ -95,6 +102,7 @@ def do_srt():
         for i in os.listdir(folder):
             srt2vtt('%s/%s' % (folder, i), './res/converted/data/subtitles/%s.%s.vtt' %
                     (i.split('.')[0], lang[1]))
+    print("Finished Srt.")
 
 
 '''
