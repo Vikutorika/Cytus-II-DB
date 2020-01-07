@@ -27,6 +27,12 @@ echo "Cleaned cache."
 unzip -q ./apk/cytus.apk -d ./res/apk
 echo "Unziped APK."
 
+# version check
+if [ ! -d "./res/apk/assets/bin/" ];then
+  echo "Longyuan Version is no longer supported!"
+  exit
+fi
+
 # move unity
 mv ./res/apk/assets/bin/Data/* ./res/unity
 echo "Migrated Unity."

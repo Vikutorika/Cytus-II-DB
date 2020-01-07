@@ -7,14 +7,15 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <div className="Home-Info">
+          {i18n(["Version Code", "软件版本"])}: {localStorage.version}<br />
           {i18n(["Username", "用户名"])}: Ivy <br />
-          {i18n(["Permission", "用户权限"])}: 644 <br />
+          {i18n(["User Group", "用户组"])}: Constructor <br />
           {i18n(["[Access Granted]", "[访问允许]"])} <br />
         </div>
         <div className="Home-Body">
           {i18n([
             "Hello, Ivy. Welcome to Cytus II DB built by A.R.C.",
-            "Ivy, 欢迎使用 A.R.C. 建设的 Cytus II DB 知识库"
+            "你好, Ivy, 欢迎使用 A.R.C. 建设的 Cytus II DB 知识库"
           ])}
           <br />
           {i18n([

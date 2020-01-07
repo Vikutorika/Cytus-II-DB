@@ -1,8 +1,10 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from PIL import Image
 from pydub import AudioSegment
 
-import os
-import re
+import os, re
 
 '''
 Image Section

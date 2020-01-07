@@ -1,6 +1,7 @@
-import os
-import json
-import re
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os, re, json
 
 MAX_TIME = 900000000
 
