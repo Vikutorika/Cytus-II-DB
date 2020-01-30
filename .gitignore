@@ -1,8 +1,19 @@
+# APK
 apk/*
-obb/*
-res/*
-deploy/*
 !apk/.gitkeep
+
+# OBB Data
+obb/*
 !obb/.gitkeep
+
+# Resources
+res/*
 !res/.gitkeep
+
+# Generated files
+deploy/*
 !deploy/.gitkeep
+
+# Old Files
+static/cytus.old/*
+!static/cytus.old/.gitkeep
